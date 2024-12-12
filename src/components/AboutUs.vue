@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="aboutUs w-full xx:h-100 xs:h-100 md:h-98 lg:h-98 xl:h-98 flex xx:flex-col xs:flex-col md:flex-row lg:flex-row xl:flex-row items-center bg-aboutBg"
+		class="aboutUs w-full xx:h-101 xs:h-100 md:h-98 lg:h-98 xl:h-98 flex xx:flex-col xs:flex-col md:flex-row lg:flex-row xl:flex-row items-center bg-aboutBg"
 	>
 		<div
 			class="aboutUs_img relative h-full xx:w-11/12 xs:w-11/12 md:w-1/2 lg:w-1/2 xl:w-1/2"

@@ -1,13 +1,13 @@
 <template>
 	<div
-		class="footer w-full bg-aboutBg flex flex-col items-center h-40 mt-5 relative"
+		class="footer w-full bg-aboutBg flex flex-col items-center xx:h-52 xs:h-56 md:h-40 lg:h-40 xl:h-40 -mt-1 relative"
 	>
 		<div class="footer_navbar flex flex-wrap items-center w-11/12 mx-auto mb-2">
 			<div
 				class="footer_navbar_items md:absolute md:top-2 lg:absolute xl:absolute w-full flex flex-wrap items-center justify-center mb-4"
 			>
 				<div
-					class="Footer_navbar_item xx:text-xx xs:text-xx md:text-xl lg:text-xl xl:text-xl px-4 py-2 text-white text-center"
+					class="Footer_navbar_item xx:text-xz xs:text-xx md:text-xl lg:text-xl xl:text-xl px-4 py-2 text-white text-center"
 					v-for="nav in Navbar"
 					:key="nav"
 				>
@@ -29,8 +29,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="footer_line w-11/12 h-0.5 bg-gray-400"></div>
-		<div class="footer_text mt-2">
+		<div class="footer_line w-11/12 h-0.5 mt-2 bg-gray-400"></div>
+		<div class="footer_text xx:mt-6 md:mt-8 lg:mt-8 xl:mt-8">
 			<p class="text-center text-gray-300 text-sm">
 				Premier Developers, LLC 2023  All Rights Reserved
 			</p>

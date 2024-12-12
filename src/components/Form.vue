@@ -5,29 +5,38 @@
 		name="nest-messages"
 		:validate-messages="validateMessages"
 		@finish="onFinish"
-		class="xx:w-11/12 xs:w-11/12 md:w-101 lg:w-101 xl:w-101 p-5 md:min-h-98 lg:min-h-98 xl:min-h-98 bg-white rounded-3xl form shadow-xl"
+		class="xx:w-11/12 xx:ml-3 md:ml-0 lg:ml-0 xl:ml-0 xs:w-11/12 md:w-101 lg:w-101 xl:w-101 p-5 md:min-h-98 lg:min-h-98 xl:min-h-98 bg-white rounded-3xl form relative"
 	>
 		<div
 			class="form_top flex xx:flex-row xs:flex-row md:flex-col lg:flex-col xl:flex-col"
 		>
 			<a-form-item
 				:name="['user', 'name']"
-				label="Full Name"
 				:label-col="{ span: 24 }"
 				:wrapper-col="{ span: 24 }"
-				:rules="[{ required: true }]"
 				class="xx:w-1/2 xs:w-1/2 md:w-full lg:w-full xl:w-full my-0 xx:mx-1 xs:mx-1"
 			>
+				<template #label>
+					<span
+						class="custom-label xx:text-xx xs:text-xx md:text-base lg:text-base xl:text-base"
+						>Full Name</span
+					>
+				</template>
 				<a-input v-model:value="formState.user.name" />
 			</a-form-item>
+
 			<a-form-item
 				:name="['user', 'Email']"
-				label="Email"
 				:label-col="{ span: 24 }"
 				:wrapper-col="{ span: 24 }"
-				:rules="[{ required: true }]"
 				class="xx:w-1/2 xs:w-1/2 md:w-full lg:w-full xl:w-full my-0 xx:mx-1 xs:mx-1"
 			>
+				<template #label>
+					<span
+						class="custom-label xx:text-xx xs:text-xx md:text-base lg:text-base xl:text-base"
+						>Email</span
+					>
+				</template>
 				<a-input v-model:value="formState.user.email" />
 			</a-form-item>
 		</div>
@@ -36,22 +45,30 @@
 		>
 			<a-form-item
 				:name="['user', 'phone_number']"
-				label="Phone Number"
 				:label-col="{ span: 24 }"
 				:wrapper-col="{ span: 24 }"
-				:rules="[{ required: true }]"
 				class="xx:w-1/2 xs:w-1/2 md:w-full lg:w-full xl:w-full my-0 xx:mx-1 xs:mx-1"
 			>
+				<template #label>
+					<span
+						class="custom-label xx:text-xx xs:text-xx md:text-base lg:text-base xl:text-base"
+						>Phone Number</span
+					>
+				</template>
 				<a-input v-model:value="formState.user.phone_number" />
 			</a-form-item>
 			<a-form-item
 				:name="['user', 'interest']"
-				label="What service are you interested in?"
 				:label-col="{ span: 24 }"
 				:wrapper-col="{ span: 24 }"
-				:rules="[{ required: true }]"
 				class="xx:w-1/2 xs:w-1/2 md:w-full lg:w-full xl:w-full my-0 xx:mx-1 xs:mx-1"
 			>
+				<template #label>
+					<span
+						class="custom-label xx:text-xx xs:text-xx md:text-base lg:text-base xl:text-base"
+						>What service are you interested in?</span
+					>
+				</template>
 				<a-input v-model:value="formState.user.interest" />
 			</a-form-item>
 		</div>
@@ -60,26 +77,37 @@
 		>
 			<a-form-item
 				:name="['user', 'price']"
-				label="Your Budget"
 				:label-col="{ span: 24 }"
 				:wrapper-col="{ span: 24 }"
-				:rules="[{ required: true }]"
 				class="xx:w-1/2 xs:w-1/2 md:w-full lg:w-full xl:w-full my-0 xx:mx-1 xs:mx-1"
 			>
+				<template #label>
+					<span
+						class="custom-label xx:text-xx xs:text-xx md:text-base lg:text-base xl:text-base"
+						>Your Budget</span
+					>
+				</template>
 				<a-input v-model:value="formState.user.price" />
 			</a-form-item>
 			<a-form-item
 				:name="['user', 'introduction']"
-				label="Message"
 				:label-col="{ span: 24 }"
 				:wrapper-col="{ span: 24 }"
 				class="xx:w-1/2 xs:w-1/2 md:w-full lg:w-full xl:w-full my-0 xx:mx-1 xs:mx-1"
 			>
-				<a-textarea v-model:value="formState.user.introduction" />
+				<template #label>
+					<span
+						class="custom-label xx:text-xx xs:text-xx md:text-base lg:text-base xl:text-base"
+						>Message</span
+					>
+				</template>
+				<a-textarea :rows="4" v-model:value="formState.user.introduction" />
 			</a-form-item>
 		</div>
-		<a-form-item :wrapper-col="{ ...layout.wrapperCol, offset: 8 }">
-			<button class="w-52 h-11 send mt-5 rounded-3xl font-bold text-base">
+		<a-form-item :wrapper-col="{ ...layout.wrapperCol, offset: 14 }">
+			<button
+				class="xx:absolute xx:w-24 xx:text-xx xx:h-7 xx:-top-14 xs:top-20 xs:text-xx xs:w-28 md:absolute md:-top-0 md:-bottom-6 md:right-28 md:w-52 md:h-11 lg:absolute lg:-top-0 lg:-bottom-6 lg:right-28 lg:w-52 lg:h-11 xl:absolute xl:-top-0 xl:-bottom-6 xl:right-28 xl:w-52 xl:h-11 send mt-5 rounded-3xl font-bold md:text-base lg:text-base xl:text-base"
+			>
 				Send Message
 			</button>
 		</a-form-item>
@@ -124,5 +152,8 @@ const onFinish = values => {
 } */
 .send {
 	background: linear-gradient(to right, #d07e15, #ffc470);
+}
+.form {
+	box-shadow: 0px 0px 20px rgb(214, 212, 212);
 }
 </style>
