@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="navbar xx:h-98 xs:h-98 w-full md:h-screen lg:h-screen xl:h-screen bg-right-top bg-cover"
+		class="navbar xx:h-98 xs:h-98 w-full md:h-102 lg:h-102 xl:h-102 bg-right-top bg-cover"
 		:style="{ backgroundImage: `url(${backImg})` }"
 	>
 		<div
@@ -19,6 +19,7 @@
 					<li
 						v-for="page in Pages"
 						:key="page"
+						@click="PagesLink(page)"
 						class="px-5 text-base text-white cursor-pointer nav_link"
 					>
 						<button
@@ -48,6 +49,7 @@
 							<li
 								v-for="page in Pages"
 								:key="page"
+								@click="PagesLink(page)"
 								class="px-5 text-base cursor-pointer nav_link py-2"
 							>
 								<span>{{ page }}</span>
@@ -58,10 +60,10 @@
 			</div>
 		</div>
 		<div
-			class="navbar_content xx:p-2 xs:p-2 xx:ml-10 xx:w-52 xs:ml-10 xs:w-52 md:ml-20 md:w-99 md:h-89 lg:ml-20 lg:w-99 lg:h-89 xl:ml-20 xl:w-99 xl:h-89 mt-32 md:p-10 lg:p-10 xl:p-10 text-white"
+			class="navbar_content xx:p-2 xs:p-2 xx:ml-10 xx:w-52 xs:ml-10 xs:w-52 md:ml-20 md:w-109 md:h-89 lg:ml-20 lg:w-109 lg:h-89 xl:ml-20 xl:w-109 xl:h-89 mt-52 md:p-10 lg:p-10 xl:p-10 text-white"
 		>
 			<h1
-				class="xx:text-xl xs:text-xl md:text-5xl lg:text-5xl xl:text-5xl"
+				class="xx:text-xl xs:text-xl md:text-6xl lg:text-6xl xl:text-6xl"
 				v-if="props.content.title"
 			>
 				{{ props.content.title }}
@@ -72,9 +74,19 @@
 			>
 				{{ props.content.button }}
 			</button>
-			<ol v-if="props.content.facts" class="list">
+			<p
+				class="content_text text-featTextCol md:text-4xl lg:text-4xl xl:text-4xl font-bold"
+				v-if="props.content.text"
+			>
+				{{ props.content.text }}
+			</p>
+			<ol
+				v-if="props.content.facts"
+				:class="[props.content.facts.length == 1 ? 'list-none' : 'list-disc']"
+			>
 				<li
 					class="xx:text-xx xs:text-xx md:text-base lg:text-base xl:text-base"
+					:class="[props.content.facts.length == 1 ? 'italic' : '']"
 					v-for="fact in props.content.facts"
 					:key="fact"
 				>
@@ -89,6 +101,8 @@
 import { ref } from 'vue';
 import Logo from '/img/logo.png';
 import gambur from '/img/gambur.png';
+import { useRouter } from 'vue-router';
+const router = useRouter();
 const props = defineProps({
 	content: {
 		type: Object,
@@ -109,6 +123,24 @@ let Pages = ref([
 	'FAQS',
 	'Contact',
 ]);
+const PagesLink = page => {
+	switch (page) {
+		case 'About Us':
+			router.push('/about');
+			break;
+		case 'Home':
+			router.push('/');
+			break;
+		case 'Portfolio':
+			router.push('/portfolio');
+			break;
+		case 'Project Type':
+			router.push('/project');
+			break;
+		default:
+			break;
+	}
+};
 const showDrawer = () => {
 	open.value = true;
 };

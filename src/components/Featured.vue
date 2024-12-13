@@ -12,17 +12,36 @@
 				</h1>
 			</div>
 			<div
-				class="featured_content_list flex xx:flex-wrap xs:flex-wrap md:flex-nowrap lg:flex-nowrap xl:flex-nowrap"
+				class="featured_content_list flex xx:flex-wrap xs:flex-wrap"
 				v-if="Content.lists"
+				:class="[
+					Content.lists.length > 5
+						? 'md:flex-wrap lg:flex-wrap xl:flex-wrap'
+						: 'md:flex-nowrap lg:flex-nowrap xl:flex-nowrap',
+				]"
 			>
 				<div
-					class="featured_content_list_item flex cursor-pointer flex-col items-center xx:w-105 xx:m-1 xs:m-1 xs:w-105 md:w-1/4 lg:w-1/4 xl:w-1/4 md:mx-2 lg:mx-2 xl:mx-2 bg-featCol rounded-lg p-4"
+					class="featured_content_list_item flex cursor-pointer flex-col items-center xx:mx-1 xx:my-1 xs:mx-1 xs:my-1 md:mx-2 md:my-2 lg:my-2 lg:mx-2 xl:my-2 xl:mx-2 bg-featCol rounded-lg"
+					:class="[
+						Content.lists.length < 5
+							? `xl:w-1/${Content.lists.length} lg:w-1/${Content.lists.length} p-4`
+							: 'xl:w-111 md:w-111 lg:w-111 xx:w-1/2 xs:w-1/2 border-2',
+						list.title ? 'bg-featCol' : 'bg-white',
+						Content.lists.length == 3
+							? 'xx:w-full xs:w-full'
+							: 'xx:w-105 xs:w-105',
+					]"
 					v-for="(list, index) in Content.lists"
 					:key="index"
 				>
 					<img
 						:src="list.img"
-						class="xx:w-9 xx:h-11 xs:w-9 xs:h-11 md:w-14 md:h-16 lg:w-14 lg:h-16 xl:w-14 xl:h-16"
+						class="xx:w-9 xx:h-11 xs:w-9 xs:h-11"
+						:class="[
+							Content.lists.length > 4
+								? 'xl:w-full xl:h-72 md:h-72 md:w-full lg:h-72 lg:w-full xx:w-full xx:h-32 xs:w-full xs:h-32'
+								: 'md:w-14 lg:w-14 xl:w-14 md:h-16 lg:h-16 xl:h-16',
+						]"
 						alt="img"
 					/>
 					<h1

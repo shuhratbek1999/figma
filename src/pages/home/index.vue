@@ -64,6 +64,7 @@ const featured = ref({
 			content: 'Expert Building Services for Superior Quality',
 		},
 	],
+	num: 4,
 });
 const about = ref({
 	title: 'About Us',
