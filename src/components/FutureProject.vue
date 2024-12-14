@@ -3,7 +3,7 @@
 		<div class="project_title flex justify-center">
 			<h1
 				v-if="Project.title"
-				class="mb-8 border-b-4 border-yellow-600 pb-1 inline-block lg:text-3xl font-semibold"
+				class="mb-8 border-b-4 border-yellow-600 pb-1 inline-block lg:text-3xl font-semibold font-montserrat"
 			>
 				{{ Project.title }}
 			</h1>

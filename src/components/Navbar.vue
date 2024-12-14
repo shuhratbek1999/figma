@@ -1,16 +1,14 @@
 <template>
 	<div
-		class="navbar xx:h-98 xs:h-98 w-full md:h-102 lg:h-102 xl:h-102 bg-right-top bg-cover"
+		class="navbar xx:h-103 xs:h-103 w-full md:h-102 lg:h-102 xl:h-102 bg-right-top bg-cover relative z-60"
 		:style="{ backgroundImage: `url(${backImg})` }"
 	>
-		<div
-			class="content_top fixed z-50 top-0 w-full flex justify-center h-20 inset-0"
-		>
+		<div class="content_top fixed z-50 top-0 w-full flex justify-center h-20">
 			<div
 				class="absolute xx:w-full xs:w-full md:w-full lg:w-full xl:w-full inset-0 bg-black opacity-50"
 			></div>
 			<div
-				class="navbar_nav relative z-10 flex items-center justify-between w-11/12 opacity-100"
+				class="navbar_nav relative z-10 flex items-center justify-between w-11/12"
 			>
 				<img :src="logo" width="150" height="67" alt="logo" />
 				<ul
@@ -59,8 +57,9 @@
 				</div>
 			</div>
 		</div>
+		<slot name="projects"></slot>
 		<div
-			class="navbar_content xx:p-2 xs:p-2 xx:ml-10 xx:w-52 xs:ml-10 xs:w-52 md:ml-20 md:w-109 md:h-89 lg:ml-20 lg:w-109 lg:h-89 xl:ml-20 xl:w-109 xl:h-89 mt-52 md:p-10 lg:p-10 xl:p-10 text-white"
+			class="navbar_content xx:p-2 xs:p-2 xx:ml-10 xx:w-52 xs:ml-10 xs:w-52 md:ml-20 md:w-109 md:h-89 lg:ml-20 lg:w-109 lg:h-89 xl:ml-20 xl:w-7/12 xl:h-89 mt-52 md:p-10 lg:p-10 xl:p-10 text-white"
 		>
 			<h1
 				class="xx:text-xl xs:text-xl md:text-6xl lg:text-6xl xl:text-6xl"
@@ -75,7 +74,7 @@
 				{{ props.content.button }}
 			</button>
 			<p
-				class="content_text text-featTextCol md:text-4xl lg:text-4xl xl:text-4xl font-bold"
+				class="content_text text-featTextCol md:text-4xl lg:text-4xl xl:text-4xl font-bold my-2"
 				v-if="props.content.text"
 			>
 				{{ props.content.text }}
@@ -136,6 +135,9 @@ const PagesLink = page => {
 			break;
 		case 'Project Type':
 			router.push('/project');
+			break;
+		case 'Services':
+			router.push('/services');
 			break;
 		default:
 			break;

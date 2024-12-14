@@ -14,6 +14,8 @@ module.exports = {
 				AtypBold: ['Atyp Bold'],
 				AtypMed: ['Atyp-Medium'],
 				AtypTB: ['Atyp-Text-Bold'],
+				montserrat: ['Montserrat', 'sans-serif'],
+				epilogue: ['Epilogue', 'sans-serif'],
 			},
 			fontSize: {
 				xz: ['0.56rem', { lineHeight: '1' }],
@@ -58,6 +60,7 @@ module.exports = {
 				100: '41rem',
 				101: '44rem',
 				102: '64rem',
+				103: '49rem',
 				125: '45rem',
 				110: '35.5rem',
 				15: '3.8125rem',
@@ -105,6 +108,7 @@ module.exports = {
 				109: '38.78rem',
 				110: '23.5%',
 				111: '32%',
+				112: '43%',
 				101: '30.5rem',
 			},
 			maxWidth: {
@@ -126,6 +130,7 @@ module.exports = {
 				aboutBg: '#15191B',
 				contactCol: '#15191B',
 				abouttext: '#A4A4A4',
+				setBg: '#252C2F',
 			},
 		},
 	},

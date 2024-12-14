@@ -6,15 +6,15 @@
 			class="contact_content xx:flex xx:justify-center md:justify-start lg:justify-start xl:justify-start w-11/12 h-3/5 bg-white"
 		>
 			<div
-				class="contact_content_top xx:w-11/12 xs:w-11/12 md:w-108 lg:w-108 xl:w-108"
+				class="contact_content_top flex flex-col xx:items-center xl:items-start"
 			>
 				<h1
-					class="font-bold xx:text-base xs:text-base md:text-4xl lg:text-4xl xl:text-4xl"
+					class="font-bold xx:text-base xx:w-full xx:text-center xs:text-center xs:w-full xs:text-base md:text-4xl md:text-start lg:text-start xl:text-start lg:text-4xl xl:text-4xl font-epilogue md:w-103 lg:w-103 xl:w-103"
 				>
 					Ready To Elevate Your Property?
 				</h1>
 				<p
-					class="italic font-light xx:text-xx md:text-xl lg:text-xl xl:text-xl my-2"
+					class="italic font-light xx:text-xx xx:w-11/12 xx:text-center md:text-start md:text-xl lg:text-start lg:text-xl xl:text-start xl:text-xl my-2 font-epilogue xl:w-112"
 				>
 					Contact us today to schedule a consultation and explore how we can
 					help you maximize your property’s potential.
@@ -46,17 +46,16 @@
 					class="relative xx:w-full xs:w-full md:w-4/5 lg:w-4/5 xl:w-4/5 mt-10"
 				>
 					<span
-						class="text-white xx:text-sm xs:text-sm md:text-xl lg:text-xl xl:text-xl font-normal"
+						class="text-white xx:text-xs xs:text-xs md:text-xl lg:text-xl xl:text-xl font-epilogue"
 						>Enter your email address to receive latest tips & deals.</span
 					>
 					<a-input
 						v-model:value="formState.email"
 						placeholder="Enter Your Email"
-						class="rounded-3xl py-5 w-full"
+						class="rounded-3xl xx:h-10 xs:h-10 md:h-16 lg:h-16 xl:h-16 w-full"
 					/>
 					<button
-						class="absolute right-2 font-bold xx:w-40 md:w-48 lg:w-48 xl:w-48 rounded-3xl input_btn p-1 mt-2"
-						style="height: 50px"
+						class="absolute right-1 font-bold xx:h-8 xx:mt-1 xs:mt-1 xs:h-8 xx:w-40 xx:text-xs xs:text-xs md:text-xl lg:text-xl xl:text-xl md:w-48 md:h-14 md:top-8 md:mt-0.5 lg:mt-0.5 lg:top-8 lg:h-14 xl:mt-0.5 xl:top-8 xl:h-14 lg:w-48 xl:w-48 rounded-3xl input_btn p-1"
 					>
 						FREE TIPS & DEALS
 					</button>

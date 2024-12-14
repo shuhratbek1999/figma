@@ -15,7 +15,7 @@ import Featured from '../../components/Featured.vue';
 import FutureProject from '../../components/FutureProject.vue';
 import Contact from '../../components/Contact.vue';
 import Footer from '../../components/Footer.vue';
-import aboutImg from '/img/aboutbg.png';
+import aboutImg from '/img/portBg.png';
 import portImg1 from '/img/portimg1.png';
 import portImg2 from '/img/portimg2.png';
 import portImg3 from '/img/portimg3.png';

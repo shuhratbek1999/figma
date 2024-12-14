@@ -1,12 +1,13 @@
 <template>
 	<div class="featured bg-white w-full flex justify-center py-10">
 		<div class="featured_content w-11/12" v-if="Content">
+			<slot name="services"></slot>
 			<div
 				class="featured_content_title flex justify-center"
 				v-if="Content.title"
 			>
 				<h1
-					class="text-center text-3xl font-semibold mb-8 border-b-4 border-yellow-600 pb-1 inline-block"
+					class="text-center xx:text-xl md:text-3xl xl:text-3xl font-semibold mb-8 border-b-4 border-yellow-600 pb-1 inline-block"
 				>
 					{{ Content.title }}
 				</h1>
