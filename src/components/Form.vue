@@ -19,7 +19,7 @@
 				<template #label>
 					<span
 						class="custom-label xx:text-xx xs:text-xx md:text-base lg:text-base xl:text-base"
-						>Full Name</span
+						>Full name</span
 					>
 				</template>
 				<a-input v-model:value="formState.user.name" />
@@ -52,7 +52,7 @@
 				<template #label>
 					<span
 						class="custom-label xx:text-xx xs:text-xx md:text-base lg:text-base xl:text-base"
-						>Phone Number</span
+						>Phone number</span
 					>
 				</template>
 				<a-input v-model:value="formState.user.phone_number" />
@@ -84,7 +84,7 @@
 				<template #label>
 					<span
 						class="custom-label xx:text-xx xs:text-xx md:text-base lg:text-base xl:text-base"
-						>Your Budget</span
+						>Your budget</span
 					>
 				</template>
 				<a-input v-model:value="formState.user.price" />
@@ -136,7 +136,7 @@ const validateMessages = {
 const formState = reactive({
 	user: {
 		name: '',
-		phone_number: '+998 ',
+		phone_number: '',
 		email: '',
 		interest: '',
 		price: 0,

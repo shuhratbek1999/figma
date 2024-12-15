@@ -66,7 +66,7 @@
 								@click="PagesLink(page)"
 								class="px-5 text-base cursor-pointer nav_link py-2 font-montserrat xx:text-sm"
 							>
-								<span v-if="page != 'Contact'">{{ page }}</span>
+								<span>{{ page }}</span>
 							</li>
 						</ul>
 					</a-drawer>
@@ -202,6 +202,7 @@ const PagesLink = page => {
 			router.push('/faqs');
 			break;
 		default:
+			router.push('/contact');
 			break;
 	}
 };

@@ -25,14 +25,10 @@
 					]"
 				>
 					<div class="img" v-if="list.img">
-						<img
-							:src="list.img"
-							class="xx:w-9 xx:h-11 xs:w-9 xs:h-11"
-							alt="img"
-						/>
+						<img :src="list.img" alt="img" />
 					</div>
 					<h1
-						class="xx:text-xs md:text-xl lg:text-xl xl:text-xl font-bold font-montserrat my-1"
+						class="xx:text-xs md:text-xl lg:text-xl xl:text-xl font-bold font-montserrat my-2"
 						:class="[featured.text_col ? 'text-black' : 'text-featTextCol']"
 					>
 						{{ list.title }}

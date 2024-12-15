@@ -40,16 +40,7 @@
 						class="title_img flex items-center justify-center w-full"
 						:class="Content.role == 'top' ? 'flex-col' : 'flex-row'"
 					>
-						<img
-							:src="list.img"
-							class="xx:w-9 xx:h-11 xs:w-9 xs:h-11"
-							:class="[
-								Content.lists.length > 4
-									? 'xl:w-full xl:h-72 md:h-72 md:w-full lg:h-72 lg:w-full xx:w-full xx:h-32 xs:w-full xs:h-32'
-									: 'md:w-14 lg:w-14 xl:w-14 md:h-16 lg:h-16 xl:h-16',
-							]"
-							alt="img"
-						/>
+						<img :src="list.img" alt="img" />
 						<h1
 							class="uppercase my-2 md:text-xl lg:text-xl xl:text-xl text-featTextCol font-bold"
 							:class="
