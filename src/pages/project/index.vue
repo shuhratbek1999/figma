@@ -13,15 +13,17 @@
 					>
 						<div class="navbar_top_nav xl:w-103">
 							<h1
-								class="xx:text-3xl font-montserrat md:text-7xl text-white font-extrabold"
+								class="xx:text-3xl font-montserrat md:text-8xl xl:text-8xl -mt-10 text-white font-extrabold"
 							>
 								{{ projectAll.title }}
 							</h1>
-							<p class="text-white py-2 font-montserrat xx:text-xs font-normal">
+							<p
+								class="text-white py-2 font-montserrat xl:text-bass xl:my-2 xx:text-xs font-normal"
+							>
 								{{ projectAll.title_text }}
 							</p>
 							<button
-								class="border-2 xx:text-base text-white py-1 px-2 my-3 border-yellow-800 font-montserrat"
+								class="border-2 xx:text-base xx:py-1 xl:py-2 text-white py-1 px-2 my-3 border-yellow-800 font-montserrat"
 							>
 								{{ projectAll.title_btn }}
 							</button>

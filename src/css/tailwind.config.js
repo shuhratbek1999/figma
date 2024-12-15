@@ -25,6 +25,7 @@ module.exports = {
 				xs: ['0.75rem', { lineHeight: '1' }],
 				sm: ['0.875rem', { lineHeight: '1.5715' }],
 				base: ['1rem', { lineHeight: '1', letterSpacing: '-0.01em' }],
+				bass: ['1rem', { lineHeight: '1.7', letterSpacing: '-0.01em' }],
 				lg: ['1.125rem', { lineHeight: '1.5', letterSpacing: '-0.01em' }],
 				xl: ['1.25rem', { lineHeight: '1.2', letterSpacing: '-0.01em' }],
 				xls: ['1rem', { lineHeight: '1', letterSpacing: '-0.01em' }],
@@ -34,6 +35,7 @@ module.exports = {
 				'5xl': ['3rem', { lineHeight: '1.25', letterSpacing: '-0.02em' }],
 				'6xl': ['3.75rem', { lineHeight: '1.2', letterSpacing: '-0.02em' }],
 				'7xl': ['3rem', { lineHeight: '1', letterSpacing: '-0.01em' }],
+				'8xl': ['4.6875rem', { lineHeight: '1', letterSpacing: '-0.01em' }],
 				'10xl': ['8.25rem', { lineHeight: '1.3', letterSpacing: '-0.001em' }],
 			},
 			screens: {
