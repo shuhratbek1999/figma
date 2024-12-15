@@ -37,12 +37,12 @@
 		<ServicePlan :plan="plan" />
 		<Settings :featured="featureds" />
 		<div
-			class="design bg-cover w-full h-90"
+			class="design xx:bg-center xx:h-32 bg-aboutBg xx:bg-contain bg-no-repeat xl:bg-right-bottom xl:bg-cover w-full xl:h-90"
 			:style="{ backgroundImage: `url(${desBg})` }"
 		></div>
 		<Settings :featured="designs" />
 		<div
-			class="expert bg-cover w-full h-90"
+			class="expert xx:bg-center xx:h-38 bg-aboutBg xx:bg-contain bg-no-repeat xl:bg-right-bottom xl:bg-cover w-full xl:h-90"
 			:style="{ backgroundImage: `url(${ExpBg})` }"
 		></div>
 		<Settings :featured="Contracts" />

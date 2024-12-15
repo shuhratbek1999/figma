@@ -66,7 +66,7 @@
 								@click="PagesLink(page)"
 								class="px-5 text-base cursor-pointer nav_link py-2 font-montserrat xx:text-sm"
 							>
-								<span>{{ page }}</span>
+								<span v-if="page != 'Contact'">{{ page }}</span>
 							</li>
 						</ul>
 					</a-drawer>
@@ -84,7 +84,7 @@
 					? 'xx:mt-36 xl:ml-24 xx:ml-4 xl:mt-96'
 					: '',
 				props.content.role == 'services'
-					? 'xx:mt-32 xl:ml-24 xx:ml-4 xl:mt-96'
+					? 'xx:mt-36 xl:ml-24 xx:ml-4 xl:mt-96'
 					: '',
 				props.content.role == 'faqs'
 					? 'xx:mt-44 xl:ml-24 xx:ml-4 xl:mt-98'
@@ -98,7 +98,9 @@
 					props.content.role == 'portfolio'
 						? 'xl:w-17 xx:w-15 xl:text-7xl'
 						: '',
-					props.content.role == 'services' ? 'xl:w-115 xl:text-7xl' : '',
+					props.content.role == 'services'
+						? 'xl:w-115 xx:w-1/2 xl:text-7xl'
+						: '',
 					props.content.role != 'faqs' ? 'text-white' : 'text-featTextCol',
 					props.content.role == 'faqs' ? 'xl:text-8xl' : '',
 					props.content.route == 'project' ? 'xx:text-3xl' : '',
@@ -121,7 +123,7 @@
 						? 'xl:w-17 xx:w-15 xl:text-4xl text-featTextCol'
 						: '',
 					props.content.role == 'services'
-						? 'xl:w-113 xx:w-15 xl:text-3xl text-featTextCol'
+						? 'xl:w-113 xx:w-1/2 xl:text-3xl text-featTextCol'
 						: '',
 					props.content.role == 'faqs' ? 'xl:text-5xl text-white' : '',
 					props.content.route == 'project' ? 'xx:text-xs' : '',
