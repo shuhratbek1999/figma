@@ -1,6 +1,7 @@
 <template>
 	<div
-		class="navbar xx:h-80 xx:bg-center xx:bg-cover xs:h-80 w-full md:h-102 lg:h-102 xl:h-102 xl:bg-right-bottom lg:bg-right-bottom relative z-60"
+		class="navbar xx:bg-center xx:bg-cover w-full md:h-102 lg:h-102 xl:h-102 xl:bg-right-bottom lg:bg-right-bottom relative z-60"
+		:class="[props.content.route == 'project' ? 'xx:h-116' : 'xx:h-80 xs:h-80']"
 		:style="[
 			props.content.role == 'services'
 				? {
@@ -100,6 +101,7 @@
 					props.content.role == 'services' ? 'xl:w-115 xl:text-7xl' : '',
 					props.content.role != 'faqs' ? 'text-white' : 'text-featTextCol',
 					props.content.role == 'faqs' ? 'xl:text-8xl' : '',
+					props.content.route == 'project' ? 'xx:text-3xl' : '',
 				]"
 				v-if="props.content.title"
 			>
@@ -122,6 +124,7 @@
 						? 'xl:w-113 xx:w-15 xl:text-3xl text-featTextCol'
 						: '',
 					props.content.role == 'faqs' ? 'xl:text-5xl text-white' : '',
+					props.content.route == 'project' ? 'xx:text-xs' : '',
 				]"
 				v-if="props.content.text"
 			>

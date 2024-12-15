@@ -12,14 +12,16 @@
 						class="navbar_top w-11/12 flex xx:flex-col xs:flex-col md:flex-row lg:flex-row xl:flex-row mt-44 z-50"
 					>
 						<div class="navbar_top_nav xl:w-103">
-							<h1 class="md:text-7xl text-white font-extrabold">
+							<h1
+								class="xx:text-3xl font-montserrat md:text-7xl text-white font-extrabold"
+							>
 								{{ projectAll.title }}
 							</h1>
-							<p class="text-white py-2 font-montserrat">
+							<p class="text-white py-2 font-montserrat xx:text-xs font-normal">
 								{{ projectAll.title_text }}
 							</p>
 							<button
-								class="border-2 text-white py-1 px-2 my-3 border-yellow-800 font-montserrat"
+								class="border-2 xx:text-base text-white py-1 px-2 my-3 border-yellow-800 font-montserrat"
 							>
 								{{ projectAll.title_btn }}
 							</button>
