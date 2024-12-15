@@ -1,7 +1,21 @@
 <template>
 	<div
-		class="navbar xx:h-103 xs:h-103 w-full md:h-102 lg:h-102 xl:h-102 bg-right-top bg-cover relative z-60"
-		:style="{ backgroundImage: `url(${backImg})` }"
+		class="navbar xx:h-80 xx:bg-center xx:bg-cover xs:h-80 w-full md:h-102 lg:h-102 xl:h-102 xl:bg-right-bottom lg:bg-right-bottom relative z-60"
+		:style="[
+			props.content.role == 'services'
+				? {
+						backgroundImage: `
+        linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+        url(${backImg})
+      `,
+				  }
+				: {
+						backgroundImage: `
+        linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), 
+        url(${backImg})
+      `,
+				  },
+		]"
 	>
 		<div class="content_top fixed z-50 top-0 w-full flex justify-center h-20">
 			<div
@@ -18,7 +32,8 @@
 						v-for="page in Pages"
 						:key="page"
 						@click="PagesLink(page)"
-						class="px-5 text-base text-white cursor-pointer nav_link"
+						class="px-5 text-base text-white cursor-pointer"
+						:class="page != 'Contact' ? 'nav_link' : ''"
 					>
 						<button
 							class="contact rounded text-sm w-32 h-9 font-bold text-white"
@@ -32,7 +47,7 @@
 				<img
 					:src="Gambuer"
 					alt="Gambuer"
-					class="xx:flex xx:ml-32 xs:flex md:hidden lg:hidden xl:hidden"
+					class="xx:flex w-12 h-8 xx:ml-32 xs:flex md:hidden lg:hidden xl:hidden"
 					@click="showDrawer"
 				/>
 				<div class="drawer xx:flex xs:flex lg:hidden xl:hidden md:hidden">
@@ -48,7 +63,7 @@
 								v-for="page in Pages"
 								:key="page"
 								@click="PagesLink(page)"
-								class="px-5 text-base cursor-pointer nav_link py-2"
+								class="px-5 text-base cursor-pointer nav_link py-2 font-montserrat xx:text-sm"
 							>
 								<span>{{ page }}</span>
 							</li>
@@ -59,33 +74,72 @@
 		</div>
 		<slot name="projects"></slot>
 		<div
-			class="navbar_content xx:p-2 xs:p-2 xx:ml-10 xx:w-52 xs:ml-10 xs:w-52 md:ml-20 md:w-109 md:h-89 lg:ml-20 lg:w-109 lg:h-89 xl:ml-20 xl:w-7/12 xl:h-89 mt-52 md:p-10 lg:p-10 xl:p-10 text-white"
+			class="navbar_content"
+			:class="[
+				props.content.role == 'home'
+					? 'xx:mt-28 xl:ml-28 xx:ml-20 xl:mt-80'
+					: '',
+				props.content.role == 'portfolio'
+					? 'xx:mt-36 xl:ml-24 xx:ml-4 xl:mt-96'
+					: '',
+				props.content.role == 'services'
+					? 'xx:mt-32 xl:ml-24 xx:ml-4 xl:mt-96'
+					: '',
+				props.content.role == 'faqs'
+					? 'xx:mt-44 xl:ml-24 xx:ml-4 xl:mt-98'
+					: '',
+			]"
 		>
 			<h1
-				class="xx:text-xl xs:text-xl md:text-6xl lg:text-6xl xl:text-6xl"
+				class="xx:text-base xs:text-base xl:text-7xl font-bold font-montserrat"
+				:class="[
+					props.content.role == 'home' ? 'xl:w-114 xx:w-15 xl:text-7xl' : '',
+					props.content.role == 'portfolio'
+						? 'xl:w-17 xx:w-15 xl:text-7xl'
+						: '',
+					props.content.role == 'services' ? 'xl:w-115 xl:text-7xl' : '',
+					props.content.role != 'faqs' ? 'text-white' : 'text-featTextCol',
+					props.content.role == 'faqs' ? 'xl:text-8xl' : '',
+				]"
 				v-if="props.content.title"
 			>
 				{{ props.content.title }}
 			</h1>
 			<button
-				class="contact rounded text-sm w-32 h-9 font-bold text-white my-4"
+				class="contact rounded text-sm xx:w-28 xx:h-6 xx:text-base xl:w-52 xl:h-14 xl:text-2xl font-montserrat font-bold text-white my-4"
 				v-if="props.content.button"
 			>
 				{{ props.content.button }}
 			</button>
 			<p
-				class="content_text text-featTextCol md:text-4xl lg:text-4xl xl:text-4xl font-bold my-2"
+				class="content_text xx:text-xs font-bold my-3 font-montserrat"
+				:class="[
+					props.content.role == 'home' ? 'xl:ml-28 xx:ml-16 xl:mt-80' : '',
+					props.content.role == 'portfolio'
+						? 'xl:w-17 xx:w-15 xl:text-4xl text-featTextCol'
+						: '',
+					props.content.role == 'services'
+						? 'xl:w-113 xx:w-15 xl:text-3xl text-featTextCol'
+						: '',
+					props.content.role == 'faqs' ? 'xl:text-5xl text-white' : '',
+				]"
 				v-if="props.content.text"
 			>
 				{{ props.content.text }}
 			</p>
-			<ol
-				v-if="props.content.facts"
-				:class="[props.content.facts.length == 1 ? 'list-none' : 'list-disc']"
-			>
+			<ol v-if="props.content.facts">
 				<li
-					class="xx:text-xx xs:text-xx md:text-base lg:text-base xl:text-base"
-					:class="[props.content.facts.length == 1 ? 'italic' : '']"
+					class="xx:text-fx xs:text-fx xx:my-0 xl:my-2 lg:my-2 md:text-base lg:text-xl text-white list-inside font-montserrat"
+					:class="[
+						props.content.text ? 'list-none' : 'list-disc',
+						props.content.role == 'portfolio' ? 'xl:w-17 xx:w-72' : '',
+						props.content.role == 'services'
+							? 'xx:w-9/12 xl:w-115 xl:text-xl'
+							: '',
+						props.content.role == 'faqs'
+							? 'xl:text-2xl xx:text-xx xx:w-9/12 text-ffff xl:w-116'
+							: 'xl:text-xl',
+					]"
 					v-for="fact in props.content.facts"
 					:key="fact"
 				>
@@ -97,7 +151,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import Logo from '/img/logo.png';
 import gambur from '/img/gambur.png';
 import { useRouter } from 'vue-router';
@@ -139,6 +193,9 @@ const PagesLink = page => {
 		case 'Services':
 			router.push('/services');
 			break;
+		case 'FAQS':
+			router.push('/faqs');
+			break;
 		default:
 			break;
 	}
@@ -149,6 +206,18 @@ const showDrawer = () => {
 const onClose = () => {
 	open.value = false;
 };
+const gradientStart = ref('rgba(255, 0, 0, 0.5)');
+const gradientEnd = ref('rgba(0, 0, 255, 0.5)');
+const imageOpacity = ref('0.7');
+// const navbarStyle = computed(() => {
+// 	return {
+// 		backgroundImage: `linear-gradient(to right,${gradientStart.value},${gradientEnd.value},url(${backImg.value}))`,
+// 		backgroundSize: 'cover',
+// 		backgroundPosition: 'center',
+// 		backgroundRepeat: 'no-repeat',
+// 		filter: `opacity(${imageOpacity.value})`,
+// 	};
+// });
 </script>
 
 <style scoped>

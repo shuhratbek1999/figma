@@ -7,9 +7,10 @@
 				class="footer_navbar_items md:absolute md:top-2 lg:absolute xl:absolute w-full flex flex-wrap items-center justify-center mb-4"
 			>
 				<div
-					class="Footer_navbar_item xx:text-xz xs:text-xx md:text-xl lg:text-xl xl:text-xl px-4 py-2 text-white text-center"
+					class="Footer_navbar_item cursor-pointer xx:text-xz xs:text-xx md:text-xl lg:text-xl xl:text-xl px-4 py-2 text-white text-center"
 					v-for="nav in Navbar"
 					:key="nav"
+					@click="PagesLink(nav)"
 				>
 					{{ nav }}
 				</div>
@@ -44,9 +45,35 @@ import Logo from '/img/logo.png';
 import Insta from '/img/instaa.png';
 import Face from '/img/face.png';
 import Linkedin from '/img/link.png';
+import { useRouter } from 'vue-router';
+const router = useRouter();
 const LogoImg = ref(Logo);
 const Navbar = ref(['Home', 'About Us', 'Project Type', 'Services', 'FAQS']);
 const Links = ref([{ img: Insta }, { img: Face }, { img: Linkedin }]);
+const PagesLink = page => {
+	switch (page) {
+		case 'About Us':
+			router.push('/about');
+			break;
+		case 'Home':
+			router.push('/');
+			break;
+		case 'Portfolio':
+			router.push('/portfolio');
+			break;
+		case 'Project Type':
+			router.push('/project');
+			break;
+		case 'Services':
+			router.push('/services');
+			break;
+		case 'FAQS':
+			router.push('/faqs');
+			break;
+		default:
+			break;
+	}
+};
 </script>
 
 <style lang="scss" scoped></style>

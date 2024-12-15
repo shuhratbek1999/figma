@@ -1,5 +1,5 @@
 <template>
-	<div class="home flex flex-col items-center">
+	<div class="project Type flex flex-col items-center">
 		<Navbar :content="content">
 			<template v-slot:projects>
 				<div

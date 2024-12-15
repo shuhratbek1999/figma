@@ -55,7 +55,7 @@
 						class="rounded-3xl xx:h-10 xs:h-10 md:h-16 lg:h-16 xl:h-16 w-full"
 					/>
 					<button
-						class="absolute right-1 font-bold xx:h-8 xx:mt-1 xs:mt-1 xs:h-8 xx:w-40 xx:text-xs xs:text-xs md:text-xl lg:text-xl xl:text-xl md:w-48 md:h-14 md:top-8 md:mt-0.5 lg:mt-0.5 lg:top-8 lg:h-14 xl:mt-0.5 xl:top-8 xl:h-14 lg:w-48 xl:w-48 rounded-3xl input_btn p-1"
+						class="absolute right-1 font-bold xx:h-8 xx:mt-1 xs:mt-1 xs:h-8 xx:w-40 xx:text-xs xs:text-xs md:text-xl lg:text-xl xl:text-xl md:w-48 md:h-14 md:top-8 md:mt-0.5 lg:mt-0.5 lg:top-8 lg:h-14 xl:mt-1 xl:top-6 xl:h-14 lg:w-48 xl:w-48 rounded-3xl input_btn p-1"
 					>
 						FREE TIPS & DEALS
 					</button>

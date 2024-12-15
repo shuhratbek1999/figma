@@ -1,5 +1,5 @@
 <template>
-	<div class="flex flex-col items-center">
+	<div class="portfolio flex flex-col items-center">
 		<Navbar :content="content" />
 		<Featured :featured="featured" />
 		<FutureProject :project="project" />
@@ -40,6 +40,8 @@ const content = ref({
 	facts: [
 		'Our portfolio highlights our passion for outstanding design, top-tier quality, and skilled craftsmanship. Every project demonstrates our unwavering commitment to turning living spaces into elegant, practical, and stunning homes.',
 	],
+	width: '580',
+	role: 'portfolio',
 });
 const featured = ref({
 	lists: [

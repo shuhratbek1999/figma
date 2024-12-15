@@ -26,7 +26,7 @@
 					:class="[
 						Content.lists.length < 5
 							? `xl:w-1/${Content.lists.length} lg:w-1/${Content.lists.length} p-4`
-							: 'xl:w-111 md:w-111 lg:w-111 xx:w-1/2 xs:w-1/2 border-2',
+							: 'xl:w-111 md:w-111 lg:w-111 xx:w-1/2 xs:w-1/2',
 						list.title ? 'bg-featCol' : 'bg-white',
 						Content.lists.length == 3
 							? 'xx:w-full xs:w-full'
@@ -34,24 +34,35 @@
 					]"
 					v-for="(list, index) in Content.lists"
 					:key="index"
+					:ref="el => (Contents[index] = el)"
 				>
-					<img
-						:src="list.img"
-						class="xx:w-9 xx:h-11 xs:w-9 xs:h-11"
-						:class="[
-							Content.lists.length > 4
-								? 'xl:w-full xl:h-72 md:h-72 md:w-full lg:h-72 lg:w-full xx:w-full xx:h-32 xs:w-full xs:h-32'
-								: 'md:w-14 lg:w-14 xl:w-14 md:h-16 lg:h-16 xl:h-16',
-						]"
-						alt="img"
-					/>
-					<h1
-						class="xx:text-xs md:text-xl lg:text-xl xl:text-xl text-featTextCol font-bold"
+					<div
+						class="title_img flex items-center justify-center w-full"
+						:class="Content.role == 'top' ? 'flex-col' : 'flex-row'"
 					>
-						{{ list.title }}
-					</h1>
+						<img
+							:src="list.img"
+							class="xx:w-9 xx:h-11 xs:w-9 xs:h-11"
+							:class="[
+								Content.lists.length > 4
+									? 'xl:w-full xl:h-72 md:h-72 md:w-full lg:h-72 lg:w-full xx:w-full xx:h-32 xs:w-full xs:h-32'
+									: 'md:w-14 lg:w-14 xl:w-14 md:h-16 lg:h-16 xl:h-16',
+							]"
+							alt="img"
+						/>
+						<h1
+							class="uppercase my-2 md:text-xl lg:text-xl xl:text-xl text-featTextCol font-bold"
+							:class="
+								Content.role == 'top'
+									? 'w-full text-center xx:text-xx'
+									: 'xl:w-6/12 lg:w-6/12 xx:w-2/3 ml-2 text-start xx:text-xl'
+							"
+						>
+							{{ list.title }}
+						</h1>
+					</div>
 					<p
-						class="text-center xx:text-xx xs:text-xx md:text-sm lg:text-sm xl:text-sm"
+						class="text-center xx:text-xx xs:text-xx md:text-sm lg:text-sm xl:text-sm font-montserrat text-contactCol"
 					>
 						{{ list.content }}
 					</p>
@@ -62,14 +73,41 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { onMounted, ref, nextTick } from 'vue';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 const props = defineProps({
 	featured: {
 		type: Object,
 		required: true,
 	},
 });
+const featured = ref(null);
+const Contents = ref([]);
 const Content = ref(props.featured);
+onMounted(async () => {
+	await nextTick();
+	gsap.registerPlugin(ScrollTrigger);
+	Contents.value.forEach((box, index) => {
+		gsap.fromTo(
+			box,
+			{
+				opacity: 0,
+				y: 50,
+			},
+			{
+				opacity: 1,
+				y: 0,
+				duration: 1,
+				scrollTrigger: {
+					trigger: box,
+					start: 'top 80%',
+					toggleActions: 'play none none none',
+				},
+			}
+		);
+	});
+});
 </script>
 
 <style lang="scss" scoped></style>

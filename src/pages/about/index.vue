@@ -1,5 +1,5 @@
 <template>
-	<div class="flex flex-col items-center">
+	<div class="about flex flex-col items-center">
 		<Navbar :content="content" />
 		<AboutContent :about="about" />
 		<Featured :featured="featured" />
@@ -61,6 +61,7 @@ const featured = ref({
 				'Our stress-free finance department can find financial solutions to save you money through value engineering.',
 		},
 	],
+	role: 'side',
 });
 const project = ref({
 	title: 'Future projects',

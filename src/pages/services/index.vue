@@ -1,5 +1,5 @@
 <template>
-	<div class="flex flex-col items-center">
+	<div class="services flex flex-col items-center">
 		<Navbar :content="content" />
 		<Featured :featured="featured">
 			<template v-slot:services>
@@ -20,7 +20,7 @@
 								alt="img"
 							/>
 							<h1
-								class="xx:text-xs md:text-xl lg:text-xl xl:text-xl text-featTextCol font-bold"
+								class="xx:text-xs md:text-xl my-2 lg:text-xl xl:text-xl text-featTextCol font-bold"
 							>
 								{{ list.title }}
 							</h1>
@@ -61,7 +61,7 @@ import ServicePlan from '../../components/ServicePlan.vue';
 import FutureProject from '../../components/FutureProject.vue';
 import Contact from '../../components/Contact.vue';
 import Footer from '../../components/Footer.vue';
-import aboutImg from '/img/portBg.png';
+import aboutImg from '/img/services.png';
 import desBg from '/img/des.png';
 import ExpBg from '/img/exp.png';
 import planImg from '/img/plan.png';
@@ -101,6 +101,8 @@ const content = ref({
 	facts: [
 		'We specialize in simplifying the complexities of real estate development with unmatched expertise. Our project management services are tailored to ensure your project progresses efficiently, stays on budget, and is completed on schedule.',
 	],
+	width: '860',
+	role: 'services',
 });
 const featured = ref({
 	title: 'Why Our Project Management Stands Out',
@@ -148,53 +150,56 @@ const featured = ref({
 			content: 'Supervising all aspects to maintain the highest standards.',
 		},
 	],
+	role: 'top',
 });
 const Contracts = ref({
 	title: 'Your Premier Choice for General Contracting',
 	lists: [
 		{
-			img: Ser1,
+			img: des1,
 			title: 'Comprehensive Project Oversight:',
 			content: 'Ensuring every aspect is flawlessly executed.',
 		},
 		{
-			img: Ser2,
+			img: des2,
 			title: 'Custom-Tailored Approach:',
 			content: 'Adapting to your specific needs and preferences.',
 		},
 		{
-			img: Ser3,
+			img: des3,
 			title: 'Timely Completion:',
 			content: 'Committing to on-time delivery without compromising quality.',
 		},
 		{
-			img: Ser4,
+			img: des4,
 			title: 'Transparent Communication:',
 			content: 'Keeping you informed and involved at every step.',
 		},
 	],
 	lists_top: [
 		{
-			img: Ser5,
+			img: des5,
 			title: 'Full-Service Construction:',
 			content: 'From minor renovations to major building projects.',
 		},
 		{
-			img: Ser6,
+			img: des6,
 			title: 'Quality Material Selection:',
 			content: 'Using only the best materials for durability and aesthetics.',
 		},
 		{
-			img: Ser7,
+			img: des7,
 			title: 'Skilled Workmanship:',
 			content: 'Employing experienced craftsmen for exceptional results.',
 		},
 		{
-			img: Ser8,
+			img: des8,
 			title: 'Safety and Compliance:',
 			content: 'Prioritizing safety while adhering to all regulations.',
 		},
 	],
+	main_bg: 'bg-aboutBg',
+	box_bg: 'bg-setBg',
 });
 const project = ref({
 	title: 'Future projects',
@@ -257,6 +262,8 @@ const designs = ref({
 				'Seamlessly working with our project management and general contracting teams.',
 		},
 	],
+	main_bg: 'bg-aboutBg',
+	box_bg: 'bg-setBg',
 });
 const featureds = ref({
 	lists: [
@@ -306,6 +313,8 @@ const featureds = ref({
 				'Coordinating with our project management and drafting services for a unified approach.',
 		},
 	],
+	main_bg: 'bg-aboutBg',
+	box_bg: 'bg-setBg',
 });
 </script>
 
