@@ -1,10 +1,10 @@
 <template>
 	<div
-		class="footer w-full bg-aboutBg flex flex-col items-center xx:h-52 xs:h-56 md:h-40 lg:h-40 xl:h-40 -mt-1 relative"
+		class="footer w-full bg-aboutBg flex flex-col items-center justify-end xx:h-52 xs:h-56 md:h-64 lg:h-64 xl:h-64 -mt-1 relative"
 	>
 		<div class="footer_navbar flex flex-wrap items-center w-11/12 mx-auto mb-2">
 			<div
-				class="footer_navbar_items md:absolute md:top-2 lg:absolute xl:absolute w-full flex flex-wrap items-center justify-center mb-4"
+				class="footer_navbar_items md:absolute md:top-2 lg:absolute xl:absolute w-full flex flex-wrap items-center justify-center mb-4 xl:h-full lg:h-full"
 			>
 				<div
 					class="Footer_navbar_item cursor-pointer xx:text-xz xs:text-xx md:text-xl lg:text-xl xl:text-xl px-4 py-2 text-white text-center"
