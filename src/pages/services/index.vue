@@ -281,7 +281,7 @@ const featureds = ref({
 		},
 		{
 			img: Set3,
-			title: 'Collaboration width Authorities',
+			title: 'Collaboration with Authorities',
 			content:
 				'Communicate width local authorities for smooth project approval.',
 		},
