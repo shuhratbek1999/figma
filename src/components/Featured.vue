@@ -7,7 +7,7 @@
 				v-if="Content.title"
 			>
 				<h1
-					class="text-center xx:text-xl md:text-3xl xl:text-3xl font-semibold mb-8 border-b-4 border-yellow-600 pb-1 inline-block"
+					class="text-center xx:mt-2 xx:text-base md:text-3xl xl:text-3xl font-semibold mb-8 border-b-4 border-yellow-600 pb-1 inline-block"
 				>
 					{{ Content.title }}
 				</h1>
