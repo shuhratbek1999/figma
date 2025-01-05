@@ -44,7 +44,7 @@
 		</div>
 		<div class="settings_list_title" v-if="featured.title">
 			<h1
-				class="xx:text-sm text-center xl:text-2xl uppercase text-white font-montserrat font-bold"
+				class="xx:text-xs text-center xl:text-2xl uppercase text-white font-montserrat font-bold"
 			>
 				{{ featured.title }}
 			</h1>

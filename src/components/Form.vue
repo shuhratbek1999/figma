@@ -5,7 +5,7 @@
 		name="nest-messages"
 		:validate-messages="validateMessages"
 		@finish="onFinish"
-		class="xx:w-11/12 xx:ml-3 md:ml-0 lg:ml-0 xl:ml-0 xs:w-11/12 md:w-101 lg:w-101 xl:w-101 p-5 md:min-h-98 lg:min-h-98 xl:min-h-98 bg-white rounded-3xl form relative"
+		class="xx:w-full xx:ml-0 md:ml-0 lg:ml-0 xl:ml-0 xs:w-full md:w-101 lg:w-101 xl:w-101 p-5 md:min-h-98 lg:min-h-98 xl:min-h-98 bg-white xl:rounded-3xl lg:rounded-3xl xx:rounded-md form relative"
 	>
 		<div
 			class="form_top flex xx:flex-row xs:flex-row md:flex-col lg:flex-col xl:flex-col"
