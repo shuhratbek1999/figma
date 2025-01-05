@@ -281,9 +281,9 @@ const featureds = ref({
 		},
 		{
 			img: Set3,
-			title: 'Documentation Management:',
+			title: 'Collaboration width Authorities',
 			content:
-				'Organizing and managing all project-related documents for efficiency.',
+				'Communicate width local authorities for smooth project approval.',
 		},
 		{
 			img: Set4,

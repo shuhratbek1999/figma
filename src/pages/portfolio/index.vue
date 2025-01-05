@@ -34,8 +34,8 @@ import Project3 from '/img/project3.png';
 import Project4 from '/img/project4.png';
 import Project5 from '/img/test.png';
 const content = ref({
-	title: 'OUR WORK – A REFLACTION OF EXCELLENCE',
-	text: 'Discover Our Luxury Home Improvement Projects',
+	title: 'Discover Our Luxury Home Improvement and new construction projects',
+	text: 'OUR WORK – A REFLACTION OF EXCELLENCE',
 	img: aboutImg,
 	facts: [
 		'Our portfolio highlights our passion for outstanding design, top-tier quality, and skilled craftsmanship. Every project demonstrates our unwavering commitment to turning living spaces into elegant, practical, and stunning homes.',

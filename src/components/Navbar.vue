@@ -96,12 +96,12 @@
 				:class="[
 					props.content.role == 'home' ? 'xl:w-114 xx:w-15 xl:text-7xl' : '',
 					props.content.role == 'portfolio'
-						? 'xl:w-17 xx:w-15 xl:text-7xl'
-						: '',
+						? 'xl:w-17 xx:w-15 xl:text-7xl text-featTextCol'
+						: 'text-white',
 					props.content.role == 'services'
 						? 'xl:w-115 xx:w-1/2 xl:text-7xl'
 						: '',
-					props.content.role != 'faqs' ? 'text-white' : 'text-featTextCol',
+					props.content.role == 'faqs' ? 'text-featTextCol' : '',
 					props.content.role == 'faqs' ? 'xl:text-8xl' : '',
 					props.content.route == 'project' ? 'xx:text-3xl' : '',
 				]"
@@ -120,7 +120,7 @@
 				:class="[
 					props.content.role == 'home' ? 'xl:ml-28 xx:ml-16 xl:mt-80' : '',
 					props.content.role == 'portfolio'
-						? 'xl:w-17 xx:w-15 xl:text-4xl text-featTextCol'
+						? 'xl:w-17 xx:w-15 xl:text-4xl text-white'
 						: '',
 					props.content.role == 'services'
 						? 'xl:w-113 xx:w-1/2 xl:text-3xl text-featTextCol'
