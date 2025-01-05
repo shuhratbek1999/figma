@@ -84,7 +84,7 @@
 					? 'xx:mt-36 xl:ml-24 xx:ml-4 xl:mt-96'
 					: '',
 				props.content.role == 'services'
-					? 'xx:mt-36 xl:ml-24 xx:ml-4 xl:mt-96'
+					? 'xx:mt-32 xl:ml-24 xx:ml-4 xl:mt-96'
 					: '',
 				props.content.role == 'faqs'
 					? 'xx:mt-44 xl:ml-24 xx:ml-4 xl:mt-98'
